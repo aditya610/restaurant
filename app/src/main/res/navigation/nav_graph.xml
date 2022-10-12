@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/restaurantFragment">
+
+    <fragment
+        android:id="@+id/restaurantFragment"
+        android:name="com.bignerdranch.android.restaurant.controllers.ui.restaurant.RestaurantFragment"
+        android:label="RestaurantFragment"
+        tools:layout="@layout/fragment_restaurent">
+        <action
+            android:id="@+id/action_restaurantFragment_to_restaurantDetailFragment"
+            app:destination="@id/restaurantDetailFragment">
+        <argument
+            android:name="id"
+            android:defaultValue="0"
+            app:argType="integer"/>
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/restaurantDetailFragment"
+        android:name="com.bignerdranch.android.restaurant.controllers.ui.restaurantdetail.RestaurantDetailFragment"
+        android:label="RestaurantDetailFragment"
+        tools:layout="@layout/fragment_restaurant_detail">
+        <argument
+            android:name="id"
+            android:defaultValue="0"
+            app:argType="integer" />
+    </fragment>
+</navigation>

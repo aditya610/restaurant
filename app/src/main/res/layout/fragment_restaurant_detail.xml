@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.bignerdranch.android.restaurant.controllers.ui.restaurantdetail.RestaurantDetailViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/item_margin_top"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/res_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/item_margin_left"
+                android:layout_marginBottom="5dp"
+                android:fontFamily="@font/cabinbold"
+                android:text="@={viewModel.name}"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_header1_30" />
+
+            <TextView
+                android:id="@+id/res_cus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/res_name"
+                android:layout_marginLeft="@dimen/item_margin_left"
+                android:layout_marginBottom="@dimen/text_view_margin_bottom"
+                android:fontFamily="@font/cabinsemibold"
+                android:text="@={viewModel.cuisine_type}"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/res_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/res_cus"
+                android:layout_marginLeft="@dimen/item_margin_left"
+                android:layout_marginBottom="@dimen/text_view_margin_bottom"
+                android:fontFamily="@font/cabinsemibold"
+                android:text="@={viewModel.address}"
+                android:textSize="@dimen/text_size_header3_15" />
+
+            <TextView
+                android:id="@+id/res_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/res_address"
+                android:layout_marginLeft="@dimen/item_margin_left"
+                android:layout_marginBottom="5dp"
+                android:fontFamily="@font/cabinbold"
+                android:text="@string/menu"
+                android:textColor="@color/text_black"
+                android:textSize="25sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_restaurant_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/res_menu" />
+        </RelativeLayout>
+    </ScrollView>
+</layout>
